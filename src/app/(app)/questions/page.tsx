@@ -66,10 +66,13 @@ export default async function QuestionsPage({
             {strings.questions.questionCount(questions.length)}
           </p>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg border p-4 bg-red-100">
-                 TEST CARD
-          </div>
-          </div>
+           {questions.map((question) => (
+           <QuestionCard
+           key={question.id}
+           data={question}
+    />
+  ))}
+</div>
         </>
       )}
     </div>
